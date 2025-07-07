@@ -11,6 +11,21 @@ public class Employee
 
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return empid == employee.empid;
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(empid);
+    }
+
+
+
     public Employee(int empid, String name, String job)
     {
         this.empid = empid;
